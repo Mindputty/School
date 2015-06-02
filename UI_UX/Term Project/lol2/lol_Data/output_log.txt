@@ -1,0 +1,40 @@
+Initialize engine version: 4.3.4f1 (e444f76e01cd)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvumdshim.dll 9.18.13.2702]
+    Renderer: Intel(R) HD Graphics 3000
+    Vendor:   Intel
+    VRAM:     848 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 RAWZ=0 NULL=1 RESZ=1 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Ben\Desktop\lol2\lol_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Ben\Desktop\lol2\lol_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+- Completed reload, in  0.056 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+Script error: OnCollisionEnter
+This message parameter has to be of type: Collision
+The message will be ignored.
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/Runtime/Mono/MonoScriptCache.cpp Line: 283)
+
+The tree Bush1 must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+ 
+(Filename:  Line: 79)
+
+UnloadTime: 0.483398 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 164.
+Total: 1.032482 ms (FindLiveObjects: 0.014881 ms CreateObjectMapping: 0.009750 ms MarkObjects: 0.060039 ms  DeleteObjects: 0.419253 ms)
+
+Platform assembly: C:\Users\Ben\Desktop\lol2\lol_Data\Managed\Boo.Lang.dll (this message is harmless)

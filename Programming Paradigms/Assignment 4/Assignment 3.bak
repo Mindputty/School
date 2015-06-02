@@ -1,0 +1,32 @@
+#lang racket
+
+; question 1:
+
+(define(threeD L)(sort-lists L '()))
+
+(define (sort-lists L Lacc)
+  (if (null? L)
+     Lacc
+     (let ((head (car L))(tail (cdr L)))(place-elem head Lacc)(sort-lists tail Lacc)Lacc)
+     )
+  )
+
+(define (place-elem elem L)
+  (if (null? L)(append elem '())
+  (if(< elem (car L))
+     (append elem L)
+     (append (car L)(place-elem elem (cdr L)))))
+  )
+
+; question 3:
+(define (reduce Func F0 L)
+  (if (null? L)
+      F0
+      (Func (car L)
+         (reduce Func F0 (cdr L)))
+  )
+)
+
+(define (q3 V)
+  (if (vector? V)(reduce + 0 (map abs (vector->list V)))
+                  (reduce + 0 (map abs V))))
