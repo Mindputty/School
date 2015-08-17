@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<link rel = "stylesheet" type = "text/css" href = "A4_Q6_Norris_7080311.css">
+		<title>Drawing with Lines</title>
+	</head>
+	<body>
+		<p id = "coords"></p>
+	    <canvas onclick = "showCoords(event)" id="canvas" height = "600px" width = "600px">Your browser does not support HTML5 canvas</canvas>
+	    <script>
+	        var myCanvas = document.getElementById("canvas");
+	        var ctx = myCanvas.getContext("2d");
+	        var gradient = ctx.createLinearGradient(445,205,460,165);
+	        var gradient2 = ctx.createLinearGradient(368,183,430,150);
+	        ctx.canvas.width  = window.innerWidth;
+  			ctx.canvas.height = window.innerHeight;
+
+  			//prism
+	        ctx.beginPath();
+	        ctx.moveTo(300,300);
+	        ctx.lineTo(500,300);
+	        ctx.lineTo(400,130);
+	        ctx.closePath();
+	        ctx.strokeStyle = "grey";
+	        ctx.lineJoin = "round"
+	        ctx.lineWidth = 5;
+	        ctx.stroke();
+
+	        //light
+	        ctx.beginPath();
+	        ctx.moveTo(0,300);
+	        ctx.lineTo(368,183);
+	        ctx.strokeStyle = "white";
+	        ctx.lineCap = "round"
+	        ctx.lineWidth = 3;
+	        ctx.stroke();
+
+	        //diffraction
+	        ctx.beginPath();
+	        ctx.moveTo(368,183);
+	        ctx.lineTo(415,150);
+	        ctx.lineTo(448,210);
+	        ctx.closePath();
+	        ctx.fillStyle = gradient2;
+	        gradient2.addColorStop(0,"white");
+	        gradient2.addColorStop(0.7,"black");
+	        gradient2.addColorStop(0.75,'rgba(0,0,0,0)');
+	        ctx.fill();
+	        ctx.strokeStyle = 'rgba(0,0,0,0)';
+	        ctx.stroke();
+
+	        //rainbow
+	        ctx.beginPath();
+	        ctx.moveTo(415,150);
+	        ctx.lineTo(900,310);
+	        ctx.lineTo(860,375);
+	        ctx.lineTo(448,210);
+	        gradient.addColorStop(0, "purple");
+	        gradient.addColorStop(0.167, "blue");
+	        gradient.addColorStop(0.334, "green");
+	        gradient.addColorStop(0.501, "yellow");
+	        gradient.addColorStop(0.667, "orange");
+	        gradient.addColorStop(0.833, "red");
+	        ctx.fillStyle = gradient;
+	        ctx.fill();
+	        ctx.strokeStyle = 'rgba(0,0,0,0)';
+	        ctx.lineWidth = 3;
+	        ctx.stroke();
+	    </script>
+	</body>
+</html>

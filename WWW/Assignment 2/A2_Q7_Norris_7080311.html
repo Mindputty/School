@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>A2_Q7</title>
+
+		<style type = "text/css">
+			table 		{	width: 500px;
+							border-collapse: collapse;
+							background-color: lightblue;}
+			table,td,th {	border: 1px solid black;
+							padding: 4px;}
+			th			{	text-align: left;
+							color: white;
+							background-color: darkblue;}
+			tr.oddrow 	{	background-color: white;}
+		</style>
+
+		<script type = "text/javascript">
+
+		var total = 0;
+		var itemnum = 0;
+
+		document.writeln("<table>");
+		document.writeln("<caption>Invoice Summary</caption>");
+		document.writeln("<thead><tr><th>Item</th><th>Quantity</th><th>Subtotal</th></tr></thead><tbody>");
+
+		var flag = false;
+
+			while(!flag){
+
+				var choice = 0;
+				var amount = -1;
+
+				while(parseInt(choice) >= 7 || parseInt(choice) < 1)
+				{
+					choice = window.prompt("Please choose a product:\n\n" + 
+										"1. Fries: $2.98\n" + 
+										"2. Hamburger: $4.50\n" + 
+										"3. Steak: $9.98\n" +
+										"4. Nachos: $4.49\n" +
+										"5. Pint of Beer: $6.87\n" +
+										"6. Finished Ordering");
+
+					if (parseInt(choice) >= 7 || parseInt(choice) < 1 || isNaN(choice))
+						window.alert("Please enter a valid number (from 1 to 6)");
+				}
+
+				if (choice == "6")
+				{
+					flag = true;
+					break;
+
+				} else {
+
+					if (++itemnum % 2 !== 0){
+						document.writeln("<tr class = 'oddrow'><td>")
+					} else {
+						document.writeln("<tr><td>")
+					}
+
+					while(amount < 0){
+						amount = window.prompt("How many would you like?");
+
+						if (amount < 0)
+							window.alert("Please enter a valid amount (0 or greater)");
+					}
+
+					switch(choice){
+						case "1":
+							document.writeln("Fries</td><td>" + amount + "</td><td align = 'right'>"+ (amount*2.98).toFixed(2) + "</td></tr>");
+							total += (amount*2.98);
+							break;
+						case "2":
+							document.writeln("Hamburger</td><td>" + amount + "</td><td align = 'right'>"+ (amount*4.50).toFixed(2) + "</td></tr>");
+							total += (amount*4.50);
+							break;
+						case "3":
+							document.writeln("Steak</td><td>" + amount + "</td><td align = 'right'>"+ (amount*9.98).toFixed(2) + "</td></tr>");
+							total += (amount*9.98);
+							break;
+						case "4":
+							document.writeln("Nachos</td><td>" + amount + "</td><td align = 'right'>"+ (amount*4.49).toFixed(2) + "</td></tr>");
+							total += (amount*4.49);
+							break;
+						case "5":
+							document.writeln("Pint of Beer</td><td>" + amount + "</td><td align = 'right'>"+ (amount*6.87).toFixed(2) + "</td></tr>");
+							total += (amount*6.87);
+							break;
+					}
+
+				}
+
+			}
+		if(++itemnum % 2 !== 0){
+			document.writeln("<tr class = 'oddrow'><td></td><td align = 'right'><b>Total:</b></td><td align = 'right'>"+total.toFixed(2)+"</td></tr></tbody></table>")
+		} else {
+			document.writeln("<tr><td></td><td align = 'right'><b>Total:</b></td><td align = 'right'>"+total.toFixed(2)+"</td></tr></tbody></table>")
+		}
+		</script>
+	</head>
+	<body></body>
+</html>

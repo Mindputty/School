@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset = "utf-8">
+		<title>Guessing Game 1</title>
+		<script>
+
+			var hiddenNumber;
+
+			function start(){
+				var myGuessButton = document.getElementById("guessButton");
+				myGuessButton.addEventListener("click", guess, false);
+				hiddenNumber = Math.floor((Math.random()*1000) + 1);
+			}
+
+			function guess(){
+				var guessValue = parseInt(document.getElementById("guessValue").value);
+				var resultText = document.getElementById("result");
+				if (guessValue == hiddenNumber){
+					resultText.innerHTML = "<p>Congratulations. You guessed the number!</p>";
+				} else if (guessValue < hiddenNumber){
+					resultText.innerHTML = "<p>Too Low. Try again.</p>";
+				} else if (guessValue > hiddenNumber){
+					resultText.innerHTML = "<p>Too High. Try again.</p>";
+				}
+			}
+
+			window.addEventListener("load", start, false);
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Guessing Game #1</h1>
+		<form action = "#">
+			<p><label>I'm thinking of a number from 1 to 1000.<br> Guess the number:<input id = "guessValue" type = "text"></label></p>
+			<p><input id = "guessButton" type = "button" value = "Guess!"></p>
+			<div id = "result"></div>
+		</form>
+	</body>
+</html>

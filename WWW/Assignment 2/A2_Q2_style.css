@@ -1,0 +1,26 @@
+/* CSS for A2_Q2*/
+
+body 		{font-family: arial, helvetica, sans-serif;}
+div			{position: relative; 
+			border-style: inset; 
+			border-width: 5px; 
+			background-color: lavender; 
+			color: black; 
+			width: 20%; 
+			text-align: center; 
+			padding: 10px;
+			border-radius: 15px;}
+div:hover 	{position: relative; 
+			border-style: outset; 
+			border-width: 5px; 
+			background-color: lightsteelblue; 
+			color: black; 
+			width: 20%; 
+			text-align: center; 
+			padding: 10px;
+			border-radius: 15px;}
+.hyperspan	{position: absolute; 
+			width: 100%; 
+			height: 100%; 
+			left: 0; 
+			top:0;}

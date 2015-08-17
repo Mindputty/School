@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>A2_Q6</title>
+		<script>
+
+			var inputNum = "";
+			var reverse = "";
+
+			while (inputNum.length != 5 || inputNum.charAt(0) == '0') {
+				inputNum = window.prompt("Enter a 5-digit integer or 5-character string that does not begin with zero");
+				reverse = inputNum.split("").reverse().join("");
+
+				if(inputNum.length != 5){
+					window.alert("String or number must be 5 digits or characters long\nPlease try again")
+				}
+
+				if(inputNum.charAt(0) == '0'){
+					window.alert("First digit of the number cannot be zero (0)\nPlease try again")
+				}
+			} 
+
+			if (inputNum === reverse){
+				document.writeln("<h1>" + inputNum + " is a palindrome</h1>");
+			} else {
+				document.writeln("<h1>" + inputNum + " is NOT a palindrome</h1>");
+			}
+
+			document.writeln("<p>Reload this page to try again</p>");
+		</script>
+	</head>
+	<body></body>
+</html>

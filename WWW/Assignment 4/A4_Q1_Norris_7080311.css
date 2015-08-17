@@ -1,0 +1,13 @@
+table, th, td 	{border: 4px solid black;	
+				border-collapse: collapse;}
+table 			{width: 25%; 
+				background-color: lightblue; 
+				position: center;}
+td 				{text-align: center;
+				width: 12.5%; 
+				padding-bottom: 12.5%;
+				font-weight: bolder; 
+				font-size: 2em; 
+				cursor: default;}
+#winText		{font-size: 2em; font-weight: bolder;}
+.empty 			{background-color: black}

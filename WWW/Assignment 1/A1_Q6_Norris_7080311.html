@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset ="utf-8">
+		<title>Autocomplete w/ Datalist</title>
+	</head>
+	<body>
+		<form action = "http://www.deitel.com" autocomplete = "on">
+			<p><label for = "txtfield">Day of the Week:
+			<input type = "text" id = "txtList" 
+				placeholder = "Day" list = "days">
+			<datalist id = "days">
+				<option value = "Sunday">
+				<option value = "Monday">
+				<option value = "Tuesday">
+				<option value = "Wednesday">
+				<option value = "Thursday">
+				<option value = "Friday">
+				<option value = "Saturday">
+			</datalist>
+			</label></p>
+
+			<p><input type = "submit" value = "Submit">
+			<input type = "reset" value = "Clear"></p>
+		</form>
+	</body>
+</html>

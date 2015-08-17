@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>A2_Q5</title>
+		<script>
+			var firstnum;
+			var secondnum;
+			var num1;
+			var num2;
+
+			firstnum = window.prompt("Enter an integer");
+			secondnum = window.prompt("Enter a smaller or equal integer");
+
+			num1 = parseInt(firstnum);
+			num2 = parseInt(secondnum);
+
+			if( num1 % num2 == 0)
+			{
+				document.writeln("<h1>" + firstnum + " is a multiple of " + secondnum + "</h1>");
+			} else {
+				document.writeln("<h1>" + firstnum + " is NOT a multiple of " + secondnum + "</h1>")
+			}
+
+			document.writeln("<p>(Reload the webpage to try again)</p>");
+		</script>
+	</head>
+	<body></body>
+</html>

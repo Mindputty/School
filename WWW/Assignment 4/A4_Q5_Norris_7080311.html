@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Text Shadows Using Canvas</title>
+</head>
+<body>
+    <canvas id = "text">Your browser does not support HTML5 canvas</canvas>
+    <script>
+        var canvas = document.getElementById("text");
+        var context = canvas.getContext("2d");
+        
+		context.canvas.width  = window.innerWidth - 30;
+ 		context.canvas.height = window.innerHeight - 30;
+ 		context.moveTo(window.innerWidth/2, window.innerHeight/2);
+        context.fillStyle = "black";
+        context.font = "72px serif";
+        context.textBaseline = "top";
+        context.textAlign = "center";
+        context.shadowOffsetX = 2;
+        context.shadowOffsetY = 5;
+        context.shadowBlur = 6;
+        context.shadowColor = "grey";
+        context.fillText("HTML5 Canvas", window.innerWidth/2 , window.innerHeight/3);
+    </script>
+</body>
+</html>

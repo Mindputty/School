@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset = "utf-8">
+		<title>Guessing Game 2</title>
+		<script>
+
+			var hiddenNumber;
+			var numGuesses;
+
+			function start(){
+				var myGuessButton = document.getElementById("guessButton");
+				myGuessButton.addEventListener("click", guess, false);
+				hiddenNumber = Math.floor((Math.random()*1000) + 1);
+				numGuesses = 0;
+			}
+
+			function guess(){
+
+				var guessValue = document.getElementById("guessValue").value;
+				var resultText = document.getElementById("result");
+				var guessText = document.getElementById("guessesText");
+				
+				if(guessValue < 1 || guessValue > 1000 || isNaN(guessValue)){
+					resultText.innerHTML = "Wrong input! You should enter a number between 1 and 1000, inclusive";
+				} else {
+
+					numGuesses++;
+
+					if (guessValue == hiddenNumber){
+						if(numGuesses < 10){
+							resultText.innerHTML = "<p>Either you know the secret or you got lucky!</p>";
+							guessText.innerHTML = "<p>Number of guesses: "+numGuesses+"</p>";
+						} else if(numGuesses==10){
+							resultText.innerHTML = "<p>Ahah! You know the secret!</p>"
+							guessText.innerHTML = "<p>Number of guesses: "+numGuesses+"</p>";
+						} else {
+							resultText.innerHTML = "<p>You should be able to do better!</p>"
+							guessText.innerHTML = "<p>Number of guesses: "+numGuesses+"</p>";
+						}
+
+					} else if (guessValue < hiddenNumber){
+						resultText.innerHTML = "<p>Too Low. Try again.</p>";
+						guessText.innerHTML = "<p>Number of guesses: "+numGuesses+"</p>";
+
+					} else if (guessValue > hiddenNumber){
+						resultText.innerHTML = "<p>Too High. Try again.</p>";
+						guessText.innerHTML = "<p>Number of guesses: "+numGuesses+"</p>";
+					}
+				}
+
+
+			}
+
+			window.addEventListener("load", start, false);
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Guessing Game #2</h1>
+		<form action = "#">
+			<p><label>I'm thinking of a number from 1 to 1000.<br> Guess the number:<input id = "guessValue" type = "text"></label></p>
+			<p><input id = "guessButton" type = "button" value = "Guess!"></p>
+			<div id = "result"></div>
+			<div id = "guessesText"></div>
+		</form>
+	</body>
+</html>

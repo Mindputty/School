@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset = "utf-8">
+		<title>Temperature Conversion</title>
+		<script>
+			function start(){
+				var cButton = document.getElementById("cButton");
+				cButton.addEventListener("click", celcius, false);
+				var fButton = document.getElementById("fButton");
+				fButton.addEventListener("click", fahrenheit, false);
+			}
+
+			function celcius(){
+				var far = parseFloat(document.getElementById("tempText").value);
+				var cel = +((5/9)*(far-32)).toFixed(1);
+				var resultText = document.getElementById("result");
+				resultText.innerHTML = "<p>"+far+"&#8457; = "+cel+"&#8451;</p>";
+			}
+
+			function fahrenheit(){
+				var cel = parseFloat(document.getElementById("tempText").value);
+				var far = +((9/5)*cel+32).toFixed(1);
+				var resultText = document.getElementById("result");
+				resultText.innerHTML = "<p>"+cel+"&#8451; = "+far+"&#8457;</p>";
+			}
+
+			window.addEventListener("load", start, false);
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Temperature Converter</h1>
+		<form action = "#">
+			<p><label>Enter the temperature:<input id = "tempText" type = "text"></label></p>
+			<p><input id = "cButton" type = "button" value = "&#8457; --> &#8451;"><input id = "fButton" type = "button" value = "&#8451; --> &#8457;"></p>
+			<div id = "result"></div>
+		</form>
+	</body>
+</html>
